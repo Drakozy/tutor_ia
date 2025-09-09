@@ -1,0 +1,9 @@
+# Habilita mod_rewrite
+RewriteEngine On
+
+# Ignora archivos y directorios reales
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirige todo a router.php (nuestro enrutador)
+RewriteRule ^(.*)$ router.php [QSA,L]
